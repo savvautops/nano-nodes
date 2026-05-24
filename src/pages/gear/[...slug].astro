@@ -1,0 +1,54 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import HardwareCard from '../../components/HardwareCard.astro';
+
+export async function getStaticPaths() {
+	const gearItems = await getCollection('gear');
+	return gearItems.map((item) => ({
+		params: { slug: item.id },
+		props: item,
+	}));
+}
+type Props = CollectionEntry<'gear'>;
+
+const item = Astro.props;
+const { Content } = await render(item);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={item.data.title} description={item.data.description} />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <article class="bg-background mb-12">
+        <div class="mb-12">
+            <HardwareCard 
+              title={item.data.title}
+              description={item.data.description}
+              price={item.data.price}
+              affiliateLink={item.data.affiliateLink}
+              imageUrl={item.data.heroImage || '/favicon.svg'}
+            />
+        </div>
+        
+        <div class="border-2 border-foreground p-8 shadow-[8px_8px_0_0_#b026ff]">
+            <h2 class="text-2xl font-bold uppercase tracking-widest text-accent-alt mb-6 border-b-2 border-foreground pb-2">Technical Analysis</h2>
+            <div class="prose prose-invert prose-p:font-mono prose-p:text-gray-300 prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent-alt prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:bg-accent-alt hover:prose-a:text-background prose-strong:text-foreground prose-code:text-accent prose-code:bg-gray-900 prose-code:px-1 prose-code:border-gray-800 prose-code:border prose-pre:border-2 prose-pre:border-foreground prose-pre:rounded-none max-w-none">
+            <Content />
+            </div>
+        </div>
+      </article>
+      <a href="/gear" class="text-accent-alt font-bold uppercase tracking-widest hover:underline decoration-2 underline-offset-8">
+        <_ Return to Hardware List
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

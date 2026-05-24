@@ -1,0 +1,45 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import HardwareCard from '../../components/HardwareCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+
+const gearItems = (await getCollection('gear')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Gear | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold text-accent-alt mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Hardware Acquisitions //</h1>
+      
+      <div class="flex flex-col gap-10">
+        {gearItems.map((item) => (
+          <div>
+            <HardwareCard 
+              title={item.data.title}
+              description={item.data.description}
+              price={item.data.price}
+              affiliateLink={item.data.affiliateLink}
+              imageUrl={item.data.heroImage || '/favicon.svg'}
+            />
+            <div class="mt-4 text-right">
+                <a href={`/gear/${item.id}/`} class="inline-block text-gray-400 font-mono uppercase tracking-wider hover:text-accent-alt hover:underline decoration-2 underline-offset-4 text-sm">
+                  [Read Full Analysis _>]
+                </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

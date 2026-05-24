@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+	const tutorials = await getCollection('tutorials');
+	return tutorials.map((tutorial) => ({
+		params: { slug: tutorial.id },
+		props: tutorial,
+	}));
+}
+type Props = CollectionEntry<'tutorials'>;
+
+const tutorial = Astro.props;
+const { Content } = await render(tutorial);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={tutorial.data.title} description={tutorial.data.description} />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <article class="border-2 border-foreground p-8 bg-background shadow-[8px_8px_0_0_#39ff14] mb-12">
+        <div class="mb-8 border-b-4 border-foreground pb-8">
+          <p class="text-accent font-mono font-bold mb-2 tracking-widest uppercase">> Log Entry: {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+          <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-widest text-foreground m-0">{tutorial.data.title}</h1>
+        </div>
+        
+        <div class="prose prose-invert prose-p:font-mono prose-p:text-gray-300 prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:bg-accent hover:prose-a:text-background prose-strong:text-foreground prose-code:text-accent-alt prose-code:bg-gray-900 prose-code:px-1 prose-code:border-gray-800 prose-code:border prose-pre:border-2 prose-pre:border-foreground prose-pre:rounded-none prose-img:border-2 prose-img:border-foreground max-w-none">
+          <Content />
+        </div>
+      </article>
+      <a href="/tutorials" class="text-accent font-bold uppercase tracking-widest hover:underline decoration-2 underline-offset-8">
+        <_ Return to Tutorials
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

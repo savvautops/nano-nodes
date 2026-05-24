@@ -1,0 +1,43 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+
+const tutorials = (await getCollection('tutorials')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Tutorials | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold text-accent mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Tutorials //</h1>
+      
+      <div class="flex flex-col gap-8">
+        {tutorials.map((tutorial) => (
+          <article class="border-2 border-foreground p-6 hover:border-accent hover:-translate-y-1 transition-all duration-75 shadow-[4px_4px_0_0_#ffffff] hover:shadow-[2px_2px_0_0_#39ff14] bg-background">
+            <a href={`/tutorials/${tutorial.id}/`} class="block group">
+              <h2 class="text-2xl text-foreground group-hover:text-accent mb-2 uppercase tracking-wide">
+                {tutorial.data.title}
+              </h2>
+              <p class="text-gray-400 font-mono text-sm mb-4">
+                > {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </p>
+              <p class="text-gray-300 leading-relaxed font-mono">
+                {tutorial.data.description}
+              </p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
