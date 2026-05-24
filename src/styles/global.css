@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: var(--bg);
-  --color-foreground: var(--fg);
-  --color-accent: var(--accent);
-  --color-accent-alt: var(--accent-alt);
-  
+  /* Default Theme (Light Mode - Newsprint) */
+  --color-background: #F4F4F0;
+  --color-foreground: #1A1A1A;
+  --color-muted: #6b7280;
+  --color-surface: #e5e7eb;
+  --color-surface-border: #d1d5db;
+  --color-accent: #D13415; /* Typewriter Red */
+  --color-accent-alt: #00509E; /* Typewriter Blue */
+
   --font-mono: "Courier New", Courier, monospace;
   --font-sans: var(--font-mono); /* Force monospace everywhere */
   
@@ -22,20 +26,15 @@
 }
 
 @layer base {
-  :root {
-    /* Paper Terminal Light Mode (Newsprint / Ink) */
-    --bg: #F4F4F0;
-    --fg: #1A1A1A;
-    --accent: #D13415; /* Typewriter Red */
-    --accent-alt: #00509E; /* Typewriter Blue */
-  }
-
+  /* Dark Mode Overrides (Carbon Paper) */
   :root[data-theme="dark"] {
-    /* Paper Terminal Dark Mode (Carbon Paper / White Ink) */
-    --bg: #1A1A1A;
-    --fg: #F4F4F0;
-    --accent: #FF5E3A;
-    --accent-alt: #3A86FF;
+    --color-background: #1A1A1A;
+    --color-foreground: #F4F4F0;
+    --color-muted: #9ca3af;
+    --color-surface: #374151;
+    --color-surface-border: #4b5563;
+    --color-accent: #FF5E3A;
+    --color-accent-alt: #3A86FF;
   }
 
   body {

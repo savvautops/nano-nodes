@@ -27,10 +27,10 @@ const tutorials = (await getCollection('tutorials')).sort(
               <h2 class="text-2xl text-foreground group-hover:text-accent mb-2 uppercase tracking-wide">
                 {tutorial.data.title}
               </h2>
-              <p class="text-gray-500 font-mono text-sm mb-4">
+              <p class="text-muted font-mono text-sm mb-4">
                 > {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}
               </p>
-              <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-mono">
+              <p class="text-muted leading-relaxed font-mono">
                 {tutorial.data.description}
               </p>
             </a>

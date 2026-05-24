@@ -32,7 +32,7 @@ const gearItems = (await getCollection('gear')).sort(
               imageUrl={item.data.heroImage || '/favicon.svg'}
             />
             <div class="mt-4 text-right">
-                <a href={`/gear/${item.id}/`} class="inline-block text-gray-400 font-mono uppercase tracking-wider hover:text-accent-alt hover:underline decoration-2 underline-offset-4 text-sm">
+                <a href={`/gear/${item.id}/`} class="inline-block text-muted font-mono uppercase tracking-wider hover:text-accent-alt hover:underline decoration-2 underline-offset-4 text-sm">
                   [Read Full Analysis _>]
                 </a>
             </div>
