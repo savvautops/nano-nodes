@@ -3,10 +3,12 @@
 @theme {
   --color-background: #000000;
   --color-foreground: #ffffff;
-  --color-accent: #00ff00; /* Brutalist neon green */
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-accent: #39ff14; /* Terminal Green */
+  --color-accent-alt: #b026ff; /* Neon Purple */
+  --font-mono: "Courier New", Courier, monospace;
   --font-sans: var(--font-mono); /* Force monospace everywhere */
   
+  /* Brutalist hard edges */
   --radius-none: 0;
   --radius-sm: 0;
   --radius-md: 0;
@@ -15,21 +17,20 @@
   --radius-2xl: 0;
   --radius-3xl: 0;
   --radius-full: 0;
-  /* Overwrite the default radius to 0 */
   --radius: 0;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-mono antialiased;
+    @apply bg-background text-foreground font-mono antialiased selection:bg-accent selection:text-background;
   }
   
   a {
-    @apply text-accent underline decoration-2 underline-offset-4 hover:bg-accent hover:text-background transition-none;
+    @apply transition-none;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-foreground font-bold tracking-tight mb-4 mt-8;
+    @apply text-foreground font-bold tracking-tight mb-4 mt-8 uppercase;
   }
 
   /* Brutalist form elements & buttons */
@@ -38,6 +39,6 @@
   }
 
   img {
-    @apply border-2 border-foreground grayscale hover:grayscale-0 transition-all;
+    @apply border-2 border-foreground grayscale hover:grayscale-0 transition-all duration-75;
   }
 }

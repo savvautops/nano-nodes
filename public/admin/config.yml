@@ -2,16 +2,16 @@ backend:
   name: github
   repo: savvops/nano-nodes
   branch: main
-  base_url: https://pages.cms.cloud # or custom auth proxy if required by pages CMS
+  base_url: https://pages.cms.cloud
   auth_endpoint: auth
 
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/content/blog"
+  - name: "tutorials"
+    label: "Tutorials"
+    folder: "src/content/tutorials"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -20,3 +20,17 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "gear"
+    label: "Hardware & Gear"
+    folder: "src/content/gear"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Item Name", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "pubDate", widget: "datetime"}
+      - {label: "Specs Summary", name: "description", widget: "text"}
+      - {label: "Price", name: "price", widget: "string", hint: "e.g., $199.99"}
+      - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
+      - {label: "Product Image", name: "heroImage", widget: "image"}
+      - {label: "Review Body", name: "body", widget: "markdown"}
