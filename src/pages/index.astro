@@ -1,49 +1,47 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <section class="border-4 border-foreground bg-background p-8 shadow-[8px_8px_0_0_#39ff14] mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-widest text-accent mb-6 border-b-4 border-foreground pb-4 inline-block">
+          Nano-Nodes
+        </h1>
+        <p class="text-xl md:text-2xl leading-relaxed text-gray-300 mb-8 font-mono">
+          Eminence in Shadow. <br/>
+          Documentation for local LLM orchestration, SFF tech, cyberdeck fabrication, and autonomous robotics. Zero bloat. Absolute simplicity.
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/tutorials" class="inline-block border-2 border-accent text-accent font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent hover:text-background transition-all duration-75">
+            Initialize Tutorials _>
+          </a>
+          <a href="/gear" class="inline-block border-2 border-accent-alt text-accent-alt font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent-alt hover:text-background transition-all duration-75">
+            Inspect Hardware _>
+          </a>
+        </div>
+      </section>
+
+      <section class="grid md:grid-cols-2 gap-8">
+        <div class="border-2 border-foreground p-6 hover:border-accent transition-colors duration-75 group">
+          <h2 class="text-2xl text-accent mb-4 group-hover:underline decoration-2 underline-offset-8">Recent Transmissions</h2>
+          <p class="text-gray-400">Awaiting input stream...</p>
+        </div>
+        <div class="border-2 border-foreground p-6 hover:border-accent-alt transition-colors duration-75 group">
+          <h2 class="text-2xl text-accent-alt mb-4 group-hover:underline decoration-2 underline-offset-8">Acquisition Targets</h2>
+          <p class="text-gray-400">Awaiting hardware logs...</p>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
