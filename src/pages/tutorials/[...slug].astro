@@ -26,13 +26,13 @@ const { Content } = await render(tutorial);
   <body>
     <Header />
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <article class="border-2 border-foreground p-8 bg-background shadow-[8px_8px_0_0_#39ff14] mb-12">
+      <article class="border-2 border-foreground p-8 bg-background shadow-[8px_8px_0_0_var(--color-accent)] mb-12">
         <div class="mb-8 border-b-4 border-foreground pb-8">
           <p class="text-accent font-mono font-bold mb-2 tracking-widest uppercase">> Log Entry: {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
           <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-widest text-foreground m-0">{tutorial.data.title}</h1>
         </div>
         
-        <div class="prose prose-invert prose-p:font-mono prose-p:text-gray-300 prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:bg-accent hover:prose-a:text-background prose-strong:text-foreground prose-code:text-accent-alt prose-code:bg-gray-900 prose-code:px-1 prose-code:border-gray-800 prose-code:border prose-pre:border-2 prose-pre:border-foreground prose-pre:rounded-none prose-img:border-2 prose-img:border-foreground max-w-none">
+        <div class="prose prose-p:font-mono prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:bg-accent hover:prose-a:text-background prose-strong:text-foreground prose-code:text-accent-alt prose-code:bg-gray-200 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:border-gray-300 dark:prose-code:border-gray-700 prose-code:border prose-pre:border-2 prose-pre:border-foreground prose-pre:rounded-none prose-img:border-2 prose-img:border-foreground max-w-none">
           <Content />
         </div>
       </article>

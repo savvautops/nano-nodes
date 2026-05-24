@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-accent: #39ff14; /* Terminal Green */
-  --color-accent-alt: #b026ff; /* Neon Purple */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+  
   --font-mono: "Courier New", Courier, monospace;
   --font-sans: var(--font-mono); /* Force monospace everywhere */
   
@@ -21,8 +22,25 @@
 }
 
 @layer base {
+  :root {
+    /* Paper Terminal Light Mode (Newsprint / Ink) */
+    --bg: #F4F4F0;
+    --fg: #1A1A1A;
+    --accent: #D13415; /* Typewriter Red */
+    --accent-alt: #00509E; /* Typewriter Blue */
+  }
+
+  :root[data-theme="dark"] {
+    /* Paper Terminal Dark Mode (Carbon Paper / White Ink) */
+    --bg: #1A1A1A;
+    --fg: #F4F4F0;
+    --accent: #FF5E3A;
+    --accent-alt: #3A86FF;
+  }
+
   body {
     @apply bg-background text-foreground font-mono antialiased selection:bg-accent selection:text-background;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
   
   a {
@@ -35,7 +53,7 @@
 
   /* Brutalist form elements & buttons */
   button, input, textarea {
-    @apply border-2 border-foreground bg-background text-foreground p-2 font-mono uppercase tracking-wider shadow-[4px_4px_0_0_#ffffff] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all;
+    @apply border-2 border-foreground bg-background text-foreground p-2 font-mono uppercase tracking-wider shadow-[4px_4px_0_0_var(--color-foreground)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all;
   }
 
   img {

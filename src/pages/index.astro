@@ -13,32 +13,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <body>
     <Header />
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <section class="border-4 border-foreground bg-background p-8 shadow-[8px_8px_0_0_#39ff14] mb-16">
+      <section class="border-4 border-foreground bg-background p-8 shadow-[8px_8px_0_0_var(--color-accent)] mb-16">
         <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-widest text-accent mb-6 border-b-4 border-foreground pb-4 inline-block">
           Nano-Nodes
         </h1>
-        <p class="text-xl md:text-2xl leading-relaxed text-gray-300 mb-8 font-mono">
-          Eminence in Shadow. <br/>
+        <p class="text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-gray-300 mb-8 font-mono">
+          Terminal Paper Protocol. <br/>
           Documentation for local LLM orchestration, SFF tech, cyberdeck fabrication, and autonomous robotics. Zero bloat. Absolute simplicity.
         </p>
         <div class="flex flex-wrap gap-6">
-          <a href="/tutorials" class="inline-block border-2 border-accent text-accent font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent hover:text-background transition-all duration-75">
+          <a href="/tutorials" class="inline-block border-2 border-accent text-accent font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent hover:text-background shadow-[4px_4px_0_0_var(--color-accent)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-75">
             Initialize Tutorials _>
           </a>
-          <a href="/gear" class="inline-block border-2 border-accent-alt text-accent-alt font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent-alt hover:text-background transition-all duration-75">
+          <a href="/gear" class="inline-block border-2 border-accent-alt text-accent-alt font-bold uppercase tracking-wider px-8 py-4 hover:bg-accent-alt hover:text-background shadow-[4px_4px_0_0_var(--color-accent-alt)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-75">
             Inspect Hardware _>
           </a>
         </div>
       </section>
 
       <section class="grid md:grid-cols-2 gap-8">
-        <div class="border-2 border-foreground p-6 hover:border-accent transition-colors duration-75 group">
+        <div class="border-2 border-foreground bg-background p-6 hover:border-accent shadow-[4px_4px_0_0_var(--color-foreground)] hover:-translate-y-1 transition-all duration-75 group">
           <h2 class="text-2xl text-accent mb-4 group-hover:underline decoration-2 underline-offset-8">Recent Transmissions</h2>
-          <p class="text-gray-400">Awaiting input stream...</p>
+          <p class="text-gray-500">Awaiting input stream...</p>
         </div>
-        <div class="border-2 border-foreground p-6 hover:border-accent-alt transition-colors duration-75 group">
+        <div class="border-2 border-foreground bg-background p-6 hover:border-accent-alt shadow-[4px_4px_0_0_var(--color-foreground)] hover:-translate-y-1 transition-all duration-75 group">
           <h2 class="text-2xl text-accent-alt mb-4 group-hover:underline decoration-2 underline-offset-8">Acquisition Targets</h2>
-          <p class="text-gray-400">Awaiting hardware logs...</p>
+          <p class="text-gray-500">Awaiting hardware logs...</p>
         </div>
       </section>
     </main>

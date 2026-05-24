@@ -22,15 +22,15 @@ const tutorials = (await getCollection('tutorials')).sort(
       
       <div class="flex flex-col gap-8">
         {tutorials.map((tutorial) => (
-          <article class="border-2 border-foreground p-6 hover:border-accent hover:-translate-y-1 transition-all duration-75 shadow-[4px_4px_0_0_#ffffff] hover:shadow-[2px_2px_0_0_#39ff14] bg-background">
+          <article class="border-2 border-foreground p-6 hover:border-accent hover:-translate-y-1 transition-all duration-75 shadow-[4px_4px_0_0_var(--color-foreground)] hover:shadow-[2px_2px_0_0_var(--color-accent)] bg-background">
             <a href={`/tutorials/${tutorial.id}/`} class="block group">
               <h2 class="text-2xl text-foreground group-hover:text-accent mb-2 uppercase tracking-wide">
                 {tutorial.data.title}
               </h2>
-              <p class="text-gray-400 font-mono text-sm mb-4">
+              <p class="text-gray-500 font-mono text-sm mb-4">
                 > {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}
               </p>
-              <p class="text-gray-300 leading-relaxed font-mono">
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-mono">
                 {tutorial.data.description}
               </p>
             </a>
