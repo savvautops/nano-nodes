@@ -23,7 +23,7 @@ A voice-activated AI assistant that:
 - Streams your voice to a **local LLM** running on your own hardware (RTX 3060, Mini PC, or laptop)
 - Speaks responses through the onboard speaker or your existing Alexa Echo
 - Displays conversation text and animated eyes on the 2" TFT screen
-- Lives entirely on your **Tailscale mesh network** — no cloud, no subscriptions
+- Lives entirely on your **Tailscale mesh network**, no cloud, no subscriptions
 
 ---
 
@@ -44,11 +44,11 @@ A voice-activated AI assistant that:
 
 ## [HARDWARE_ACQUISITION]
 
-### 🛒 The Core Kit
+### The Core Kit
 
-The **LAFVIN ESP32-S3 AI Chatbot Kit** is the heart of this build. It arrives pre-assembled — no soldering required. The modular design means you snap the display, mic, and speaker boards together in under 5 minutes.
+The **LAFVIN ESP32-S3 AI Chatbot Kit** is the heart of this build. It arrives pre-assembled, no soldering required. The modular design means you snap the display, mic, and speaker boards together in under 5 minutes.
 
-<AffiliateCTA link="https://amzn.to/lafvin-esp32-s3-kit" label="🛒 GET THE KIT ON AMAZON ($51.03)" />
+<p style="margin:1.5rem 0"><a href="https://amzn.to/lafvin-esp32-s3-kit" target="_blank" rel="nofollow sponsored noopener" style="display:inline-block;border:2px solid currentColor;padding:.75rem 1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none">Get the kit on Amazon ($51.03)</a></p>
 
 ### What's in the box:
 - ESP32-S3 control board (16MB Flash, 8MB PSRAM)
@@ -64,7 +64,7 @@ The **LAFVIN ESP32-S3 AI Chatbot Kit** is the heart of this build. It arrives pr
 
 ### Step 1: Assemble the Hardware (5 minutes)
 
-The kit is modular. Follow the pin markings — each module only connects one way.
+The kit is modular. Follow the pin markings, each module only connects one way.
 
 ```
 ESP32-S3 Board
@@ -80,7 +80,7 @@ Snap together. No soldering. Done.
 
 ### Step 2: Flash the Firmware
 
-We'll use **XiaoZhi-ESP32** — the open-source firmware with 26,000+ GitHub stars that powers this exact kit. It supports both DeepSeek and OpenAI APIs out of the box, plus custom WebSocket endpoints for local LLMs.
+We'll use **XiaoZhi-ESP32**, the open-source firmware with 26,000+ GitHub stars that powers this exact kit. It supports both DeepSeek and OpenAI APIs out of the box, plus custom WebSocket endpoints for local LLMs.
 
 #### 2.1 Install esptool
 ```bash
@@ -172,13 +172,13 @@ ESP32 Voice Input → WebSocket → n8n/Webhook
     → Speaker plays response
 ```
 
-This keeps your voice data **air-gapped** — it never leaves your home network.
+This keeps your voice data **air-gapped**: it never leaves your home network.
 
 ---
 
 ### Step 7: Test the Wake Word
 
-Say your wake word. The ESP-SR engine runs entirely on the ESP32-S3 — no internet, no cloud. It fires instantly.
+Say your wake word. The ESP-SR engine runs entirely on the ESP32-S3, no internet, no cloud. It fires instantly.
 
 First test: *"Hey Dragon, what's the weather?"*
 Response: *"I don't have internet access, but your RTX 3060 is at 42°C and you have 3 unread emails."*
@@ -206,23 +206,26 @@ Wire WS2812B NeoPixels to GPIO 48. Program animated eye patterns that "blink" wh
 
 ---
 
-<PartsList parts={[
-  { name: "LAFVIN ESP32-S3 AI Chatbot Kit", link: "https://amzn.to/lafvin-esp32-s3-kit", price: "$51.03" },
-  { name: "N100 Mini PC (LLM Server)", link: "https://amzn.to/beelink-s12-pro", price: "$169.00" },
-  { name: "USB-C Data Cable", link: "https://amzn.to/usbc-data-cable", price: "$7.99" },
-  { name: "WS2812B NeoPixel Ring (optional)", link: "https://amzn.to/neopixel-ring", price: "$9.99" },
-  { name: "3.5mm Aux Cable (Alexa mod)", link: "https://amzn.to/aux-cable", price: "$5.99" }
-]} />
+<table>
+<thead><tr><th>Part</th><th>Price</th></tr></thead>
+<tbody>
+<tr><td><a href="https://amzn.to/lafvin-esp32-s3-kit" target="_blank" rel="nofollow sponsored noopener">LAFVIN ESP32-S3 AI Chatbot Kit</a></td><td>$51.03</td></tr>
+<tr><td><a href="https://amzn.to/beelink-s12-pro" target="_blank" rel="nofollow sponsored noopener">N100 Mini PC (LLM Server)</a></td><td>$169.00</td></tr>
+<tr><td><a href="https://amzn.to/usbc-data-cable" target="_blank" rel="nofollow sponsored noopener">USB-C Data Cable</a></td><td>$7.99</td></tr>
+<tr><td><a href="https://amzn.to/neopixel-ring" target="_blank" rel="nofollow sponsored noopener">WS2812B NeoPixel Ring (optional)</a></td><td>$9.99</td></tr>
+<tr><td><a href="https://amzn.to/aux-cable" target="_blank" rel="nofollow sponsored noopener">3.5mm Aux Cable (Alexa mod)</a></td><td>$5.99</td></tr>
+</tbody>
+</table>
 
 ---
 
-<RelatedTools tools={[
-  { title: "XiaoZhi-ESP32", link: "https://github.com/78/xiaozhi-esp32", description: "26K+ star open-source firmware for ESP32 voice chat. Pre-loaded MCP support." },
-  { title: "XiaoClaw", link: "https://github.com/beancookie/xiaoclaw", description: "Local AI Agent firmware with tool calling, memory, and autonomous task execution." },
-  { title: "Ollama", link: "https://ollama.ai", description: "Run Llama 3, Qwen 2.5, Mistral locally with one command." },
-  { title: "Tailscale", link: "https://tailscale.com", description: "Mesh VPN connecting your ESP32, server, and phone on one private network." },
-  { title: "n8n", link: "https://n8n.io", description: "Workflow automation to orchestrate STT → LLM → TTS pipelines." }
-]} />
+<ul>
+<li><a href="https://github.com/78/xiaozhi-esp32" target="_blank" rel="noopener">XiaoZhi-ESP32</a>, 26K+ star open-source firmware for ESP32 voice chat with pre-loaded MCP support.</li>
+<li><a href="https://github.com/beancookie/xiaoclaw" target="_blank" rel="noopener">XiaoClaw</a>, local AI agent firmware with tool calling, memory, and autonomous task execution.</li>
+<li><a href="https://ollama.ai" target="_blank" rel="noopener">Ollama</a>, run Llama 3, Qwen 2.5, Mistral locally with one command.</li>
+<li><a href="https://tailscale.com" target="_blank" rel="noopener">Tailscale</a>, mesh VPN connecting your ESP32, server, and phone on one private network.</li>
+<li><a href="https://n8n.io" target="_blank" rel="noopener">n8n</a>, workflow automation to orchestrate STT to LLM to TTS pipelines.</li>
+</ul>
 
 ---
 
@@ -242,10 +245,10 @@ Wire WS2812B NeoPixels to GPIO 48. Program animated eye patterns that "blink" wh
 
 Now that your voice assistant is live, extend it:
 
-1. **[Add tool calling]** — Let it control smart home devices, check system stats, or trigger n8n workflows
-2. **[3D print a dragon chassis]** — See our [Dragon Smart Speaker build](/tutorials/3d-printed-dragon-speaker)
-3. **[Run fully offline]** — Switch to XiaoClaw firmware for local LLM inference directly on ESP32-S3
-4. **[Build a cyberdeck terminal]** — See our [NerdDeck build guide](/tutorials/nerddeck-cyberdeck)
+1. **Add tool calling**, Let it control smart home devices, check system stats, or trigger n8n workflows
+2. **3D print a dragon chassis**, Turn the bare kit into a proper desk speaker
+3. **Run fully offline**, Switch to XiaoClaw firmware for local LLM inference directly on ESP32-S3
+4. **Build a cyberdeck terminal**, Pair the voice assistant with a portable terminal build
 
 ---
 

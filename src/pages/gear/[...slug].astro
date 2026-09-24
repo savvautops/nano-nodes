@@ -9,7 +9,7 @@ import HardwareCard from '../../components/HardwareCard.astro';
 export async function getStaticPaths() {
 	const gearItems = await getCollection('gear');
 	return gearItems.map((item) => ({
-		params: { slug: item.id },
+		params: { slug: item.id.replace(/\.(md|mdx)$/, '') },
 		props: item,
 	}));
 }
@@ -46,7 +46,7 @@ const { Content } = await render(item);
         </div>
       </article>
       <a href="/gear" class="text-accent-alt font-bold uppercase tracking-widest hover:underline decoration-2 underline-offset-8">
-        <_ Return to Hardware List
+        &lt;_ Return to Hardware List
       </a>
     </main>
     <Footer />

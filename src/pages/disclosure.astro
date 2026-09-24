@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Affiliate Disclosure | ${SITE_TITLE}`} description="How nano-nodes uses affiliate links, which programs we participate in, and our promise about recommendations." />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold text-accent mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Affiliate Disclosure //</h1>
+
+      <div class="prose prose-p:font-mono prose-p:text-muted prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 prose-strong:text-foreground prose-ul:font-mono prose-ul:text-muted max-w-none">
+        <p><strong>Short version:</strong> some links on nano-nodes are affiliate links. As an Amazon Associate, we earn from qualifying purchases, at no extra cost to you.</p>
+
+        <h2>What’s an affiliate link?</h2>
+        <p>When we link to a product on Amazon, the link may include our Associate tag. It works exactly like a normal link for you, but it tells Amazon we sent you. If you buy something, Amazon pays us a small percentage. The price you pay is identical either way.</p>
+
+        <h2>Programs we participate in</h2>
+        <ul>
+          <li><strong>Amazon Associates:</strong> links to amazon.com (including amzn.to short links) on our blog, tutorials, and gear pages may be affiliate links.</li>
+        </ul>
+        <p>Some outbound links are plain links with no affiliate tag (for example, links to GitHub projects or product search pages). Those earn us nothing.</p>
+
+        <h2>Our promise about recommendations</h2>
+        <ul>
+          <li>We only recommend hardware we’d genuinely suggest to a friend, commission or not.</li>
+          <li>A commission never changes what we say about a product. If something’s mediocre, we’ll say so or skip it.</li>
+          <li>We don’t let merchants pay for placement in our guides or reviews.</li>
+        </ul>
+
+        <p class="text-sm">Effective date: September 24, 2026. Questions: <a href="mailto:sockonconcrete@gmail.com">sockonconcrete@gmail.com</a>.</p>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -4,7 +4,6 @@ description: "Turn your home PC into a private gaming cloud and play anywhere wi
 pubDate: 2026-05-23
 category: "Builds"
 heroImage: "/blog-placeholder-about.jpg"
-amazonLink: "https://amzn.to/example-tab"
 tags: ["Gaming", "Sunshine", "Moonlight", "Tailscale", "Cloud Gaming"]
 ---
 
@@ -14,7 +13,7 @@ The era of paying monthly fees for "Cloud Gaming" is over. Why rent a server in 
 
 ## [THE_CONCEPT]
 
-Paid services like GeForce Now or Xbox Cloud Gaming are great for convenience, but they come with a "latency tax" and a monthly bill. By using Sunshine (the server) and Moonlight (the client), you can stream your own library from your PC to almost any device—tablets, phones, or even older laptops—with near-zero lag.
+Paid services like GeForce Now or Xbox Cloud Gaming are great for convenience, but they come with a "latency tax" and a monthly bill. By using Sunshine (the server) and Moonlight (the client), you can stream your own library from your PC to almost any device (tablets, phones, or even older laptops) with near-zero lag.
 
 ## [HOW_IT_WORKS]
 
@@ -51,15 +50,18 @@ To make this work outside your house without opening dangerous ports on your rou
 
 For the best experience, we recommend a tablet with a high-quality screen and a dedicated controller.
 
-<AffiliateCTA link="https://amzn.to/example-tab" label="🛒 GET THE TAB S6 LITE ON AMAZON" />
+<p style="margin:1.5rem 0"><a href="https://www.amazon.com/s?k=Samsung+Galaxy+Tab+S6+Lite" target="_blank" rel="noopener" style="display:inline-block;border:2px solid currentColor;padding:.75rem 1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none">Check the Tab S6 Lite on Amazon</a></p>
 
-<PartsList parts={[
-  { name: "Samsung Galaxy Tab S6 Lite", link: "https://amzn.to/example-tab", price: "$199.00" },
-  { name: "8BitDo Pro 2 Controller", link: "https://amzn.to/example-8bitdo", price: "$49.99" }
-]} />
+<table>
+<thead><tr><th>Part</th><th>Price</th></tr></thead>
+<tbody>
+<tr><td><a href="https://www.amazon.com/s?k=Samsung+Galaxy+Tab+S6+Lite" target="_blank" rel="noopener">Samsung Galaxy Tab S6 Lite</a></td><td>$199.00</td></tr>
+<tr><td><a href="https://www.amazon.com/s?k=8BitDo+Pro+2+controller" target="_blank" rel="noopener">8BitDo Pro 2 Controller</a></td><td>$49.99</td></tr>
+</tbody>
+</table>
 
-<RelatedTools tools={[
-  { title: "Sunshine", link: "https://github.com/LizardByte/Sunshine", description: "The ultimate self-hosted game stream host." },
-  { title: "Moonlight", link: "https://moonlight-stream.org/", description: "Open-source GameStream client for all platforms." },
-  { title: "Tailscale", link: "https://tailscale.com", description: "Zero-config mesh VPN for secure remote gaming." }
-]} />
+<ul>
+<li><a href="https://github.com/LizardByte/Sunshine" target="_blank" rel="noopener">Sunshine</a>, the self-hosted game stream host.</li>
+<li><a href="https://moonlight-stream.org/" target="_blank" rel="noopener">Moonlight</a>, open-source GameStream client for all platforms.</li>
+<li><a href="https://tailscale.com" target="_blank" rel="noopener">Tailscale</a>, zero-config mesh VPN for secure remote gaming.</li>
+</ul>

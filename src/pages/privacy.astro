@@ -1,0 +1,49 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Privacy Policy | ${SITE_TITLE}`} description="nano-nodes privacy policy: what data we collect (very little), how we use it, and how to contact us." />
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold text-accent mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Privacy Policy //</h1>
+
+      <div class="prose prose-p:font-mono prose-p:text-muted prose-headings:text-foreground prose-headings:uppercase prose-headings:tracking-widest prose-a:text-accent prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 prose-strong:text-foreground prose-ul:font-mono prose-ul:text-muted max-w-none">
+        <p class="text-sm">Effective date: September 24, 2026 · Last updated: September 24, 2026</p>
+        <p>This policy explains what information nano-nodes (“we,” “us,” “our”) collects when you visit <strong>nano-nodes.com</strong> (the “Site”), how we use it, and the choices you have.</p>
+
+        <h2>1. Who we are</h2>
+        <p>nano-nodes is operated by Savv Studio. For privacy questions, contact <a href="mailto:sockonconcrete@gmail.com">sockonconcrete@gmail.com</a>.</p>
+
+        <h2>2. Information we collect</h2>
+        <p><strong>a) Information you give us directly.</strong> The Site has no accounts, comments, or signup forms, so we don’t collect anything you type. If you email us, we receive your message and email address, and use them only to reply.</p>
+        <p><strong>b) Information stored in your browser.</strong> The theme toggle stores your light/dark preference in your browser’s local storage. It never leaves your device and is never sent to us.</p>
+        <p><strong>c) Hosting logs.</strong> The Site is a static site hosted on Cloudflare Pages. Cloudflare may log basic technical information (such as IP addresses and request logs) for security purposes, under its own privacy policy.</p>
+
+        <h2>3. What we don’t do</h2>
+        <ul>
+          <li>No analytics tools, advertising pixels, or trackers run on the Site.</li>
+          <li>We don’t set any cookies ourselves.</li>
+          <li>We never sell personal information to anyone.</li>
+        </ul>
+
+        <h2>4. Outbound and affiliate links</h2>
+        <p>Some links on the Site point to Amazon and other merchants. If you click one and buy something, we may earn a commission (see our <a href="/disclosure">Affiliate Disclosure</a>). Those merchants’ sites are governed by their own privacy policies, not ours.</p>
+
+        <h2>5. RSS feed</h2>
+        <p>The Site publishes an RSS feed (<a href="/rss.xml">rss.xml</a>). It’s a plain XML file; subscribing to it shares nothing with us.</p>
+
+        <h2>6. Changes to this policy</h2>
+        <p>If we change this policy in a material way, we’ll update the “Last updated” date above. Continued use of the Site after changes means you accept the updated policy.</p>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: savvops/nano-nodes
+  repo: savvautops/nano-nodes
   branch: main
   base_url: https://pages.cms.cloud
   auth_endpoint: auth

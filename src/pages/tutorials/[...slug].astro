@@ -8,7 +8,7 @@ import Footer from '../../components/Footer.astro';
 export async function getStaticPaths() {
 	const tutorials = await getCollection('tutorials');
 	return tutorials.map((tutorial) => ({
-		params: { slug: tutorial.id },
+		params: { slug: tutorial.id.replace(/\.(md|mdx)$/, '') },
 		props: tutorial,
 	}));
 }
@@ -37,7 +37,7 @@ const { Content } = await render(tutorial);
         </div>
       </article>
       <a href="/tutorials" class="text-accent font-bold uppercase tracking-widest hover:underline decoration-2 underline-offset-8">
-        <_ Return to Tutorials
+        &lt;_ Return to Tutorials
       </a>
     </main>
     <Footer />

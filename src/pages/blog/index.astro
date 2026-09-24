@@ -2,10 +2,11 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
-const tutorials = (await getCollection('tutorials')).sort(
+const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -13,25 +14,25 @@ const tutorials = (await getCollection('tutorials')).sort(
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`Tutorials | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+    <BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <h1 class="text-4xl font-bold text-accent mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Tutorials //</h1>
-      
+      <h1 class="text-4xl font-bold text-accent mb-8 uppercase tracking-widest border-b-4 border-foreground pb-4 inline-block">Blog //</h1>
+
       <div class="flex flex-col gap-8">
-        {tutorials.map((tutorial) => (
+        {posts.map((post) => (
           <article class="border-2 border-foreground p-6 hover:border-accent hover:-translate-y-1 transition-all duration-75 shadow-[4px_4px_0_0_var(--color-foreground)] hover:shadow-[2px_2px_0_0_var(--color-accent)] bg-background">
-            <a href={`/tutorials/${tutorial.id.replace(/\.(md|mdx)$/, '')}/`} class="block group">
+            <a href={`/blog/${post.id.replace(/\.(md|mdx)$/, '')}/`} class="block group">
               <h2 class="text-2xl text-foreground group-hover:text-accent mb-2 uppercase tracking-wide">
-                {tutorial.data.title}
+                {post.data.title}
               </h2>
               <p class="text-muted font-mono text-sm mb-4">
-                > {tutorial.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}
+                > <FormattedDate date={post.data.pubDate} />
               </p>
               <p class="text-muted leading-relaxed font-mono">
-                {tutorial.data.description}
+                {post.data.description}
               </p>
             </a>
           </article>
